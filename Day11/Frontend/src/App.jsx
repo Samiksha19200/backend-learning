@@ -5,7 +5,7 @@ const App = () => {
   const [note, setnote] = useState([])
 
   function fetchNote() {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://backend-learning-kix5.onrender.com/api/notes")
       .then((res) => {
         setnote(res.data.note)
       })
@@ -16,7 +16,7 @@ const App = () => {
 
     const { title, description } = e.target.elements
 
-    axios.post("http://localhost:3000/api/notes", {
+    axios.post("https://backend-learning-kix5.onrender.com/api/notes", {
       title: title.value,
       description: description.value
     })
@@ -32,7 +32,7 @@ const App = () => {
   }, [])
 
   function deleteHandler(note_id) {
-    axios.delete(`http://localhost:3000/api/notes/${note_id}`)
+    axios.delete(`https://backend-learning-kix5.onrender.com/api/notes/${note_id}`)
       .then((res) => {
         console.log(res.data);
         fetchNote()
@@ -42,7 +42,7 @@ const App = () => {
   function updateHandler(e,note_id){
     e.preventDefault()
     const {update}=e.target.elements
-    axios.patch(`http://localhost:3000/api/notes/${note_id}`,{
+    axios.patch(`https://backend-learning-kix5.onrender.com/pi/notes/${note_id}`,{
       description:update.value
     })
     .then((res)=>{
