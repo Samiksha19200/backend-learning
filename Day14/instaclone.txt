@@ -1,0 +1,3 @@
+AUTHENTICATION
+register---> name, email ,password , bio , profile_image
+login ----> name , email,password
